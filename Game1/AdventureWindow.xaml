@@ -1,0 +1,57 @@
+﻿<Window
+    x:Class="AdventureGame.AdventureWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Приключения в затерянном месте"
+    Width="800"
+    Height="450">
+    <Grid>
+        <TextBlock
+            Height="167"
+            Margin="0,19,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="24"
+            TextWrapping="Wrap"><Run Text="Вы очутились в замке и видите четверо ворот. " /><LineBreak /><Run Text="За каждыми из них вас ожидают приключения." /><LineBreak /><Run Text="Ворота ведущие в Лес, Ворота ведущие в Магазин, " /><LineBreak /><Run Text="Ворота ведущие в Замок и Ворота ведущие в Пустыню. " /><LineBreak /><Run Text="Выберите свой путь." /><LineBreak /><Run /><LineBreak /><Run /></TextBlock>
+        <Button
+            x:Name="forestButton"
+            Width="150"
+            Height="30"
+            Margin="0,213,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="ForestButton_Click"
+            Content="Лес"
+            FontSize="18" />
+        <Button
+            x:Name="shopButton"
+            Width="150"
+            Height="30"
+            Margin="0,258,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="ShopButton_Click"
+            Content="Магазин"
+            FontSize="18" />
+        <Button
+            x:Name="castleButton"
+            Width="150"
+            Height="30"
+            Margin="0,308,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="CastleButton_Click"
+            Content="Замок"
+            FontSize="18" />
+        <Button
+            x:Name="desertButton"
+            Width="150"
+            Height="30"
+            Margin="0,353,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="DesertButton_Click"
+            Content="Пустыня"
+            FontSize="18" />
+    </Grid>
+</Window>

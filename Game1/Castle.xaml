@@ -1,0 +1,50 @@
+﻿<Window
+    x:Class="AdventureGame.Castle"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AdventureGame"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Castle"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBlock
+            Width="704"
+            Height="78"
+            Margin="0,27,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="22"
+            TextWrapping="Wrap"><Run Language="ru-ru" Text="Вы попали в старый замок и видите комнату охраняемую солдатами, а в стороне вельможу. У Вас есть выбор, сделайте его." /><LineBreak /><Run Language="ru-ru" /></TextBlock>
+        <Button
+            Width="250"
+            Height="30"
+            Margin="0,164,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="Get_in_a_room_Click"
+            Content="Пробраться в комнату"
+            FontSize="18" />
+        <Button
+            Width="250"
+            Height="30"
+            Margin="0,202,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="Talk_Click_1"
+            Content="Поговорить с вельможей"
+            FontSize="18" />
+        <Button
+            Width="250"
+            Height="30"
+            Margin="0,247,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="Nothing_toDo_Click_Click_2"
+            Content="Ничего не делать"
+            FontSize="18" />
+
+    </Grid>
+</Window>
