@@ -11,12 +11,12 @@
     mc:Ignorable="d">
     <Grid>
         <TextBlock
-            Width="562"
-            Height="76"
+            Width="574"
+            Height="105"
             Margin="102,38,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            TextWrapping="Wrap" FontSize="22"><Run Language="ru-ru" Text="Поздравляем Вы продвинулись вперед, теперь Вы попали в таинственный город! Выберите действие." /><LineBreak /><Run Language="ru-ru" /></TextBlock>
+            TextWrapping="Wrap" FontSize="22"><Run Text="Поздравляем Вы продвинулись вперед, теперь Вы попали в таинственный город! Выберите действие"/><Run Language="ru-ru" Text=", чтобы найти выход из города."/><LineBreak/><Run/></TextBlock>
         <Button
             Margin="0,252,0,0"
             HorizontalAlignment="Center"

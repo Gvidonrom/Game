@@ -18,7 +18,7 @@ namespace AdventureGame
             MessageBoxResult result = MessageBox.Show("Вы купили красивое старое украшение, что с ним делать, пока неизвестно, положим его в карман и продолжим путешествие", "Информация", MessageBoxButton.OKCancel, MessageBoxImage.Information);
             
           
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             
@@ -30,7 +30,7 @@ namespace AdventureGame
 
             if (result == MessageBoxResult.OK)
             {
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             }
@@ -39,6 +39,9 @@ namespace AdventureGame
         private void Nothing_toDo_Clic_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ничего не делая, Вы погибли от истощения. Игра окончена.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
 
     }

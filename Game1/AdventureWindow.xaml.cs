@@ -15,7 +15,7 @@ namespace AdventureGame
         {
             Forest forest = new Forest();
             forest.Show();
-            Close(); // Закрываем текущее окно (MainWindow)
+            Close();
         }
 
         private void ShopButton_Click(object sender, RoutedEventArgs e)
@@ -27,7 +27,7 @@ namespace AdventureGame
 
         private void CastleButton_Click(object sender, RoutedEventArgs e)
         {
-            Castle castle = new Castle();
+            Castle castle = new Castle(playerData);
             castle.Show();
             Close();
         }

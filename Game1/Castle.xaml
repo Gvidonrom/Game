@@ -42,7 +42,7 @@
             Margin="0,247,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            Click="Nothing_toDo_Click_Click_2"
+            Click="Nothing_toDo_Click_Click"
             Content="Ничего не делать"
             FontSize="18" />
 

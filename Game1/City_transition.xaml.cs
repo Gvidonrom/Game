@@ -6,19 +6,18 @@ namespace AdventureGame
     
     public partial class City_transition : Window
     {
-        private PlayerData playerData = new PlayerData();
-        private bool hasDecoration;
+        private PlayerData playerData;
+        
 
-        public City_transition(bool hasDecoration)
+        public City_transition(PlayerData playerData)
         {
+            
             InitializeComponent();
-            InitializeComponent();
-            this.hasDecoration = hasDecoration;
+            this.playerData = playerData;
         }
                 
         private void Ask_for_help_Click(object sender, RoutedEventArgs e)
         {
-            
             City city = new City(playerData);
             city.Show();
             Close();

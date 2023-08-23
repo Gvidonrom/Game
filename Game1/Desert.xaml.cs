@@ -1,25 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AdventureGame
 {
-    /// <summary>
-    /// Логика взаимодействия для Desert.xaml
-    /// </summary>
+
     public partial class Desert : Window
     {
-        private PlayerData playerData = new PlayerData();
+        private PlayerData playerData;
         public Desert()
         {
             InitializeComponent();
@@ -28,6 +14,9 @@ namespace AdventureGame
         private void To_town_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("Вы пошли в сторону города, вы шли, шли, шли... и в итоге погибли от обезвоживания. Игра проиграна.", "Информация", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
 
         private void To_Oasis_Click_1(object sender, RoutedEventArgs e)
@@ -36,7 +25,7 @@ namespace AdventureGame
 
             if (result == MessageBoxResult.OK)
             {
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             }
@@ -48,7 +37,7 @@ namespace AdventureGame
 
             if (result == MessageBoxResult.OK)
             {
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             }

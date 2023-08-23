@@ -1,33 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AdventureGame
 {
-    /// <summary>
-    /// Логика взаимодействия для Castle.xaml
-    /// </summary>
+    
     public partial class Castle : Window
     {
-        private PlayerData playerData = new PlayerData();
-        public Castle()
+        private PlayerData playerData;
+        public Castle(PlayerData playerData)
         {
             InitializeComponent();
+            this.playerData = playerData;
         }
 
         private void Get_in_a_room_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Вы пойманы и убиты. Игра окончена!", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
 
         private void Talk_Click_1(object sender, RoutedEventArgs e)
@@ -36,15 +26,18 @@ namespace AdventureGame
 
             if (result == MessageBoxResult.OK)
             {
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             }
         }
 
-        private void Nothing_toDo_Click_Click_2(object sender, RoutedEventArgs e)
+        private void Nothing_toDo_Click_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ничего не делая, Вы погибли от истощения. Игра окончена.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
     }
 }

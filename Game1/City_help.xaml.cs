@@ -15,13 +15,12 @@ namespace AdventureGame
 
         private void Ask_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вы выглядите слишком подозрительно - пропыленный путешественник, в поношенной одежде... Вам никтоничего не сказал, Вы потерпели неудачу.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show("Вы выглядите слишком подозрительно - пропыленный путешественник, в очень потрепанной одежде... Вам никто ничего не сказал, Вы потерпели неудачу.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void Buy_information_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Вы решили купить информацию, но что у Вас есть?", "Информация", MessageBoxButton.OKCancel, MessageBoxImage.Information);
-
+            
             if (playerData.HasDecoration)
             {
                 MessageBox.Show("У вас есть украшение. Житель города дает вам информацию.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -36,6 +35,9 @@ namespace AdventureGame
         private void Atack_civilian_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Это оказалась плохая идея... Житель оказался не промах, он Вас победил и сдал страже. Вас казнили.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
     }
 }

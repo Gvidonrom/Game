@@ -1,13 +1,9 @@
-﻿
-using System.Windows;
+﻿using System.Windows;
 
 
 namespace AdventureGame
 {
-    /// <summary>
-    /// Логика взаимодействия для Forest.xaml
-    /// </summary>
-    public partial class Forest : Window
+     public partial class Forest : Window
     {
         private PlayerData playerData = new PlayerData();
         public Forest()
@@ -18,6 +14,9 @@ namespace AdventureGame
         private void Hunting_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Вы пойманы и съедены. Игра окончена!", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
 
         private void Gather_wood_Click_1(object sender, RoutedEventArgs e)
@@ -26,7 +25,7 @@ namespace AdventureGame
 
             if (result == MessageBoxResult.OK)
             {
-                City_transition city_transition = new City_transition(playerData.HasDecoration);
+                City_transition city_transition = new City_transition(playerData);
                 city_transition.Show();
                 Close();
             }
@@ -35,6 +34,9 @@ namespace AdventureGame
         private void Nothing_toDo_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ничего не делая, Вы погибли от истощения. Игра окончена.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            AdventureWindow startWindow = new AdventureWindow();
+            startWindow.Show();
+            Close();
         }
     }
 }

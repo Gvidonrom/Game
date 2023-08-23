@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="City_independence" Height="450" Width="800">
     <Grid>
-        
+        <TextBlock HorizontalAlignment="Left" Margin="120,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="67" Width="612" FontSize="22"><Run Language="ru-ru" Text="Вы решаете самостоятельно разобраться со своими проблемами и выбираете:"/></TextBlock>
+        <Button Content="Использовать предмет" HorizontalAlignment="Center" Margin="0,187,0,0" VerticalAlignment="Top" Width="300" Height="30" Click="Use_item_Click"/>
+        <Button Content="Отправиться на поиск самостоятельно" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Width="300" Height="30" Click="Search_Click"/>
+
     </Grid>
 </Window>
