@@ -6,16 +6,17 @@ namespace AdventureGame
     public partial class Desert : Window
     {
         private PlayerData playerData;
-        public Desert()
+        public Desert(PlayerData playerData)
         {
             InitializeComponent();
+            this.playerData = playerData;
         }
 
         private void To_town_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Вы пошли в сторону города, вы шли, шли, шли... и в итоге погибли от обезвоживания. Игра проиграна.", "Информация", MessageBoxButton.OKCancel, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            MessageBoxResult result = MessageBox.Show("Вы пошли в сторону города, вы шли, шли, шли... и в итоге погибли от обезвоживания.", "Информация", MessageBoxButton.OKCancel, MessageBoxImage.Information);
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
 

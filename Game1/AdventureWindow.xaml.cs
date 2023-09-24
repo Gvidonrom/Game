@@ -34,7 +34,7 @@ namespace AdventureGame
 
         private void DesertButton_Click(object sender, RoutedEventArgs e)
         {
-            Desert desert = new Desert();
+            Desert desert = new Desert(playerData);
             desert.Show();
             Close();
         }

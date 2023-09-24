@@ -13,9 +13,9 @@ namespace AdventureGame
                 
         private void Hunting_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вы пойманы и съедены. Игра окончена!", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            MessageBox.Show("Не Вы поймали, а Вас поймали и съели.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
 
@@ -34,8 +34,8 @@ namespace AdventureGame
         private void Nothing_toDo_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Ничего не делая, Вы погибли от истощения. Игра окончена.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
     }

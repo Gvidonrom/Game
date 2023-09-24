@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Threading.Tasks;
+using System;
+using System.Windows;
 
 namespace AdventureGame
 {
@@ -16,6 +18,9 @@ namespace AdventureGame
         private void Ask_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Вы выглядите слишком подозрительно - пропыленный путешественник, в очень потрепанной одежде... Вам никто ничего не сказал, Вы потерпели неудачу.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            Lose lose = new Lose();
+            lose.Show();
+            Close();
         }
 
         private void Buy_information_Click(object sender, RoutedEventArgs e)
@@ -23,11 +28,14 @@ namespace AdventureGame
             
             if (playerData.HasDecoration)
             {
-                MessageBox.Show("У вас есть украшение. Житель города дает вам информацию.", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Предложенное Вами украшение очень заинтерсовало жителя.. Житель города дает Вам информацию, как выйти из города", "Информация", MessageBoxButton.OK, MessageBoxImage.Information);
+                Winer winer = new Winer();
+                winer.Show();
+                Close();
             }
             else
             {
-                MessageBox.Show("У вас нет украшения. Житель города отказывается давать информацию.", "Информация", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("У вас нет ничего, что могло бы заинтереовать жителя. Житель города отказывается давать информацию.", "Информация", MessageBoxButton.OK, MessageBoxImage.Warning);
 
             }
         }
@@ -35,8 +43,8 @@ namespace AdventureGame
         private void Atack_civilian_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Это оказалась плохая идея... Житель оказался не промах, он Вас победил и сдал страже. Вас казнили.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
     }

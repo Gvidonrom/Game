@@ -14,9 +14,9 @@ namespace AdventureGame
 
         private void Get_in_a_room_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вы пойманы и убиты. Игра окончена!", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            MessageBox.Show("Вы были убиты при поптыке проникновения в охраняемую комнату.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
 
@@ -34,9 +34,9 @@ namespace AdventureGame
 
         private void Nothing_toDo_Click_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Ничего не делая, Вы погибли от истощения. Игра окончена.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            MessageBox.Show("Ничего не делая, Вы погибли от истощения.", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
+            Lose lose = new Lose();
+            lose.Show();
             Close();
         }
     }

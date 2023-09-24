@@ -17,9 +17,8 @@ namespace AdventureGame
 
         private void Search_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Долго блуждая по городу Вы наконец-то нашли выход. Вы победитель!", "Конец игры", MessageBoxButton.OK, MessageBoxImage.Information);
-            AdventureWindow startWindow = new AdventureWindow();
-            startWindow.Show();
+            Winer winer = new Winer();
+            winer.Show();
             Close();
         }
     }
